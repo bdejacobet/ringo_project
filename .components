@@ -1,0 +1,8 @@
+--- 
+:renderer: erb
+:script: none
+:admin_renderer: erb
+:orm: activerecord
+:mock: none
+:test: none
+:stylesheet: none
