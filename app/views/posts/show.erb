@@ -1,0 +1,5 @@
+<h2 class="title"><%= @post.title %></h2>
+<div class="inner">
+  <%= @post.body %>
+</div>
+<%= button_to 'retour sur tous les posts', url(:posts, :index), :method => :get, :class => :button_to %> |

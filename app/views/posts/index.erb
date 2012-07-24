@@ -1,0 +1,15 @@
+<% @posts.each do |post| %>
+<div class="inner">
+  <table class="table">
+	<tr>
+	  <th class="first"><%= post.title %></th>
+	  <th class="last"><%= post.created_at %></th>
+	  <th class="last"><%= button_to 'voir', url(:posts, :show, :id => post.id), :method => :get, :class => :button_to %></th>
+	</tr>
+	<tr>
+	  <td class="first"><%= post.body %></td>
+	  <td class="last">&nbsp;</td>
+	</tr>
+  </table>
+</div>
+<% end %>
