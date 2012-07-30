@@ -1,0 +1,15 @@
+<% @branches.each do |branche| %>
+<div class="inner">
+  <table class="table">
+	<tr>
+	  <th class="first"><%= branche.name %></th>
+	  <th><%= branche.created_at %></th>
+	  <th class="last"><%= button_to 'voir', url(:branches, :show, :id => post.id), :method => :get, :class => :button_to %></th>
+	</tr>
+	<tr>
+	  <td class="first"><%= branche.description %></td>
+	  <td class="last">&nbsp;</td>
+	</tr>
+  </table>
+</div>
+<% end %>

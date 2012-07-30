@@ -1,0 +1,5 @@
+<h2 class="title"><%= @environnment.name %></h2>
+<div class="inner">
+  <%= @environnment.description %>
+</div>
+<%= button_to 'retour sur tous les environnments', url(:environnments, :index), :method => :get, :class => :button_to %> |

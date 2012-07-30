@@ -1,0 +1,15 @@
+<% @environnments.each do |environnment| %>
+<div class="inner">
+  <table class="table">
+	<tr>
+	  <th class="first"><%= environnment.name %></th>
+	  <th><%= environnment.created_at %></th>
+	  <th class="last"><%= button_to 'voir', url(:environnments, :show, :id => post.id), :method => :get, :class => :button_to %></th>
+	</tr>
+	<tr>
+	  <td class="first"><%= environnment.description %></td>
+	  <td class="last">&nbsp;</td>
+	</tr>
+  </table>
+</div>
+<% end %>

@@ -1,0 +1,5 @@
+<h2 class="title"><%= @projet.name %></h2>
+<div class="inner">
+  <%= @projet.description %>
+</div>
+<%= button_to 'retour sur tous les projets', url(:projets, :index), :method => :get, :class => :button_to %> |

@@ -1,0 +1,18 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first"><%= link_to pat(:list), url(:environnements, :index) %></li>
+      <li><%= link_to pat(:new), url(:environnements, :new) %></li>
+      <li class="active"><%= link_to pat(:edit), url(:environnements, :edit, :id => @environnement.id) %></li>
+    </ul>
+  </div>
+  <div class="content">
+    <h2 class="title"><%= pat(:edit) %> <% mt(:environnement) %></h2>
+    <div class="inner">
+      <% form_for :environnement, url(:environnements, :update, :id => @environnement.id), :method => :put, :class => :form do |f| %>
+        <%= partial "environnements/form", :locals => { :f => f } %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<% content_for :sidebar, partial("base/sidebar") %>

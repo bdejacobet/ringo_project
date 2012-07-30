@@ -1,0 +1,5 @@
+<h2 class="title"><%= @branche.name %></h2>
+<div class="inner">
+  <%= @branche.description %>
+</div>
+<%= button_to 'retour sur toutes les branche', url(:branches, :index), :method => :get, :class => :button_to %> |
