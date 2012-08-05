@@ -1,7 +1,8 @@
 RingoProject.controllers :projets do
 
   get :index do
-	@projets = Projet.all(:order => 'created_at desc')
+	@projets = Projet.all(:order => 'name desc')
+	render 'projets/index'
   end
 
   get :show, :with => :id do

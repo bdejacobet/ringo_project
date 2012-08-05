@@ -13,8 +13,6 @@
           <th class="first"><%= mat(:projet, :id) %></th>
           <th><%= mat(:projet, :name) %></th>
           <th><%= mat(:projet, :description) %></th>
-          <th><%= mat(:projet, :created_at) %></th>
-          <th><%= mat(:projet, :updated_at) %></th>
           <th class="last">&nbsp;</th>
         </tr>
         <% @projets.each do |projet| %>
@@ -22,10 +20,8 @@
           <td class="first"><%= projet.id %></td>
           <td><%= projet.name %></td>
           <td><%= projet.description %></td>
-          <td><%= projet.created_at %></td>
-          <td><%= projet.updated_at %></td>
           <td class="last">
-            <%= button_to pat(:edit), url(:projets, :edit, :id => projet.id), :method => :get, :class => :button_to %> |
+            <%= button_to pat(:edit), url(:projets, :edit, :id => projet.id), :method => :get, :class => :button_to %>
             <%= button_to pat(:delete), url(:projets, :destroy, :id => projet.id), :method => :delete, :class => :button_to, :onsubmit => "return confirm('#{pat(:confirm)}')" %>
           </td>
         </tr>

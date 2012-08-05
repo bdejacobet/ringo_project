@@ -1,7 +1,8 @@
 RingoProject.controllers :environnements do
 
   get :index do
-	@environnements = Environnement.all(:order => 'created_at desc')
+	@environnements = Environnement.all(:order => 'name desc')
+    render 'environnements/index'
   end
 
   get :show, :with => :id do

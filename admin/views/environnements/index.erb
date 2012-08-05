@@ -13,8 +13,7 @@
           <th class="first"><%= mat(:environnement, :id) %></th>
           <th><%= mat(:environnement, :name) %></th>
           <th><%= mat(:environnement, :description) %></th>
-          <th><%= mat(:environnement, :created_at) %></th>
-          <th><%= mat(:environnement, :updated_at) %></th>
+          <th><%= mat(:environnement, :projet_id) %></th>
           <th class="last">&nbsp;</th>
         </tr>
         <% @environnements.each do |environnement| %>
@@ -22,12 +21,11 @@
           <td class="first"><%= environnement.id %></td>
           <td><%= environnement.name %></td>
           <td><%= environnement.description %></td>
-          <td><%= environnement.created_at %></td>
-          <td><%= environnement.updated_at %></td>
+          <td><%= Projet.find(environnement.projet_id).name %></td>
           <td class="last">
-            <%= button_to pat(:edit), url(:environnements, :edit, :id => environnement.id), :method => :get, :class => :button_to %> |
+            <%= button_to pat(:edit), url(:environnements, :edit, :id => environnement.id), :method => :get, :class => :button_to %>
             <%= button_to pat(:delete), url(:environnements, :destroy, :id => environnement.id), :method => :delete, :class => :button_to, :onsubmit => "return confirm('#{pat(:confirm)}')" %>
-          </td>
+		  </td>
         </tr>
         <% end %>
       </table>

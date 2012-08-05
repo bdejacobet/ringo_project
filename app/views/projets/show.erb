@@ -2,4 +2,15 @@
 <div class="inner">
   <%= @projet.description %>
 </div>
+<% @projet.environnements.each do |environnement| %>
+<div class="inner">
+  <table class="table">
+	<tr>
+	  <th class="first"><%= environnement.name %></th>
+	  <th><%= environnement.description %></th>
+	  <th class="last"><%= button_to 'voir', url(:environnements, :show, :id => environnement.id), :method => :get, :class => :button_to %></th>
+	</tr>	
+  </table>
+</div>
+<% end %>
 <%= button_to 'retour sur tous les projets', url(:projets, :index), :method => :get, :class => :button_to %> |

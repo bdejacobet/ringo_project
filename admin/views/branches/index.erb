@@ -13,8 +13,8 @@
           <th class="first"><%= mat(:branche, :id) %></th>
           <th><%= mat(:branche, :name) %></th>
           <th><%= mat(:branche, :description) %></th>
-          <th><%= mat(:branche, :created_at) %></th>
-          <th><%= mat(:branche, :updated_at) %></th>
+          <th><%= mat(:branche, :environnement_id) %></th>
+          <th><%= mat(:environnement, :projet_id) %></th>
           <th class="last">&nbsp;</th>
         </tr>
         <% @branches.each do |branche| %>
@@ -22,8 +22,8 @@
           <td class="first"><%= branche.id %></td>
           <td><%= branche.name %></td>
           <td><%= branche.description %></td>
-          <td><%= branche.created_at %></td>
-          <td><%= branche.updated_at %></td>
+          <td><%= Environnement.find(branche.environnement_id).name %></td>
+          <td><%= Projet.find(Environnement.find(branche.environnement_id).projet_id).name %></td>
           <td class="last">
             <%= button_to pat(:edit), url(:branches, :edit, :id => branche.id), :method => :get, :class => :button_to %> |
             <%= button_to pat(:delete), url(:branches, :destroy, :id => branche.id), :method => :delete, :class => :button_to, :onsubmit => "return confirm('#{pat(:confirm)}')" %>

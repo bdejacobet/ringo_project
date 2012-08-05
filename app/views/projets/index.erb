@@ -3,13 +3,16 @@
   <table class="table">
 	<tr>
 	  <th class="first"><%= projet.name %></th>
-	  <th><%= projet.created_at %></th>
+	  <th><%= projet.description %></th>
 	  <th class="last"><%= button_to 'voir', url(:projets, :show, :id => projet.id), :method => :get, :class => :button_to %></th>
-	</tr>
-	<tr>
-	  <td class="first"><%= projet.description %></td>
-	  <td class="last">&nbsp;</td>
-	</tr>
+	</tr>	
+	<% projet.environnements.each do |environnement| %>
+		<tr>
+		  <td class="first"><%= environnement.name %></td>
+		  <td class="first"><%= environnement.description %></td>
+		  <td class="last"><%= button_to 'voir', url(:environnements, :show, :id => environnement.id), :method => :get, :class => :button_to %></td>
+		</tr>		    
+    <% end %>
   </table>
 </div>
 <% end %>
