@@ -10,20 +10,35 @@
     <div class="inner">
       <table class="table">
         <tr>
+<<<<<<< HEAD
           <th class="first"><%= mat(:branch, :id) %></th>
           <th><%= mat(:branch, :name) %></th>
           <th><%= mat(:branch, :description) %></th>
           <th><%= mat(:branch, :environnement_id) %></th>
+=======
+          <th class="first"><%= mat(:branche, :id) %></th>
+          <th><%= mat(:branche, :name) %></th>
+          <th><%= mat(:branche, :description) %></th>
+          <th><%= mat(:branche, :environnement_id) %></th>
+>>>>>>> b544d3985405b7f10bb8fe82cfec507b77b6cce4
           <th><%= mat(:environnement, :projet_id) %></th>
           <th class="last">&nbsp;</th>
         </tr>
         <% @branches.each do |branch| %>
         <tr>
+<<<<<<< HEAD
           <td class="first"><%= branch.id %></td>
           <td><%= branch.name %></td>
           <td><%= branch.description %></td>
           <td><%= Environnement.find(branch.environnement_id).name %></td>
           <td><%= Projet.find(Environnement.find(branch.environnement_id).projet_id).name %></td>
+=======
+          <td class="first"><%= branche.id %></td>
+          <td><%= branche.name %></td>
+          <td><%= branche.description %></td>
+          <td><%= Environnement.find(branche.environnement_id).name %></td>
+          <td><%= Projet.find(Environnement.find(branche.environnement_id).projet_id).name %></td>
+>>>>>>> b544d3985405b7f10bb8fe82cfec507b77b6cce4
           <td class="last">
             <%= button_to pat(:edit), url(:branches, :edit, :id => branch.id), :method => :get, :class => :button_to %> |
             <%= button_to pat(:delete), url(:branches, :destroy, :id => branch.id), :method => :delete, :class => :button_to, :onsubmit => "return confirm('#{pat(:confirm)}')" %>
