@@ -7,11 +7,13 @@ Admin.controllers :branches do
 
   get :new do
     @branche = Branche.new
+    @environnements = Environnement.all
     render 'branches/new'
   end
 
   post :create do
     @branche = Branche.new(params[:branche])
+    @environnements = Environnement.all
     if @branche.save
       flash[:notice] = 'Branche was successfully created.'
       redirect url(:branches, :edit, :id => @branche.id)
@@ -22,6 +24,7 @@ Admin.controllers :branches do
 
   get :edit, :with => :id do
     @branche = Branche.find(params[:id])
+    @environnements = Environnement.all
     render 'branches/edit'
   end
 

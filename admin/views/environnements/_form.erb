@@ -10,7 +10,7 @@
 </div>
 <div class="group">
   <%= f.label :projet %><%= f.error_message_on :projet %>
-  <%= f.select :projet, :options => projets.id %>
+  <%= f.select :projet_id, :collection => @projets, :fields => [:name, :id] %>
 </div>
 
 <div class="group navform wat-cf">

@@ -7,6 +7,7 @@ Admin.controllers :environnements do
 
   get :new do
     @environnement = Environnement.new
+    @projets = Projet.all
     render 'environnements/new'
   end
 
