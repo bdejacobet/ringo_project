@@ -8,7 +8,7 @@
   <div class="content">
     <h2 class="title"><%= pat(:new) %> <% mt(:branche) %></h2>
     <div class="inner">
-      <% form_for :branche, url(:branches, :create), :class => :form do |f| %>
+      <% form_for :branch, url(:branches, :create), :class => :form do |f| %>
         <%= partial "branches/form", :locals => { :f => f } %>
       <% end %>
     </div>

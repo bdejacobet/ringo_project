@@ -1,5 +1,5 @@
-class Projet < ActiveRecord::Base
-	has_many :environnements
+class Branch < ActiveRecord::Base
+	belongs_to :environnement
 	validates_presence_of :name
 	validates_presence_of :description
 end

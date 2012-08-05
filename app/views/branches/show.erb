@@ -1,5 +1,7 @@
-<h2 class="title"><%= @branche.name %></h2>
+<h2 class="title"><%= @branch.name %></h2>
 <div class="inner">
-  <%= @branche.description %>
+  <%= @branch.description %>
 </div>
-<%= button_to 'retour sur toutes les branche', url(:branches, :index), :method => :get, :class => :button_to %> |
+<div class="inner">
+	<%= button_to 'retour sur l\'environnement', url(:environnements, :show, :id => @branch.environnement_id), :method => :get, :class => :button_to %>
+</div>

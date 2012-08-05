@@ -5,6 +5,7 @@
        juan[at]insignia4u.com
 
     light grey:                 #cfcfcf
+    light-medium grey:          #8C99A0
     medium grey:                #36393d
     dark grey:                  #1a1a1a
     interactive action yellow   #ffff88
@@ -241,6 +242,10 @@ hr {
 .table th {
   background: #36393d;
   color: #FFF;
+}
+
+.table td.light-medium-grey {
+  background: #8C99A0;
 }
 
 .table td {

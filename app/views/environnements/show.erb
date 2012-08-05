@@ -1,5 +1,18 @@
-<h2 class="title"><%= @environnment.name %></h2>
+<h2 class="title"><%= @environnement.name %></h2>
 <div class="inner">
-  <%= @environnment.description %>
+  <%= @environnement.description %>
 </div>
-<%= button_to 'retour sur tous les environnments', url(:environnments, :index), :method => :get, :class => :button_to %> |
+<% @environnement.branches.each do |branch| %>
+<div class="inner">
+  <table class="table">
+	<tr>
+	  <th class="first"><%= branch.name %></th>
+	  <th><%= branch.description %></th>
+	  <th class="last"><%= button_to 'voir', url(:branches, :show, :id => branch.id), :method => :get, :class => :button_to %></th>
+	</tr>		
+  </table>
+</div>
+<% end %>
+<div class="inner">
+	<%= button_to 'retour sur le projet', url(:projets, :show, :id => @environnement.projet_id), :method => :get, :class => :button_to %>
+</div>

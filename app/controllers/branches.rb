@@ -1,11 +1,12 @@
 RingoProject.controllers :branches do
 
   get :index do
-	@branches = Branche.all(:order => 'created_at desc')
+	@branches = Branch.all(:order => 'name desc')
+    render 'branches/index'
   end
 
   get :show, :with => :id do
-    @branche = Branche.find_by_id(params[:id])
+    @branch = Branch.find_by_id(params[:id])
     render 'branches/show'
   end
 
