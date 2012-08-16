@@ -1,7 +1,20 @@
 <h2 class="title"><%= @branch.name %></h2>
 <div class="inner">
   <%= @branch.description %>
+	<hr>    
+    <div id="repo"></div> 
+    <hr>
 </div>
 <div class="inner">
 	<%= button_to 'retour sur l\'environnement', url(:environnements, :show, :id => @branch.environnement_id), :method => :get, :class => :button_to %>
 </div>
+<link rel="stylesheet" href="http://darcyclarke.me/wp-content/themes/blanche_2012/resources/css/jquery.vangogh.css">
+<link rel="stylesheet" href="http://darcyclarke.me/wp-content/themes/blanche_2012/resources/css/github.css">
+<script type="text/javascript" src="/javascript/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/repo/repo.min.js"></script>
+<script>
+jQuery(function($){
+  $('pre').vanGogh();
+  $('#repo').repo({ user: 'itkg-bdejacobet', name: 'bdthequeAndroid' });
+});
+</script>
